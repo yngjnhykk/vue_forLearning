@@ -1,19 +1,9 @@
 <template>
   <div>
-    <!-- <div v-if="isVisible" class="red"></div>
-    <div v-if="isVisible === true" class="blue"></div>
-    <div v-else class="black"></div> -->
-
-    <!-- <div v-if="count > 1" class="red"></div>
-    <div v-else class="blue"></div> -->
-
-    <!-- <button @click="count++">증가</button>
-    <button @click="count--">감소</button> -->
-
-    <div v-show="isVisible" class="red"></div>
-    <div v-show="!isVisible" class="blue"></div>
-
-    <div v-if="isVisible" class="black"></div>
+    <!-- <button v-on:click="count++">인라인 핸들러</button>
+    <h1>{{ count }}</h1> -->
+    <button v-on:click="changeName">메서드 핸들러</button>
+    <h1>{{ name }}</h1>
   </div>
 </template>
 
@@ -21,28 +11,16 @@
 export default {
   data() {
     return {
-      isVisible: false,
       count: 0,
+      name: 'Vue.js',
     };
   },
-  methods: {},
+  methods: {
+    changeName() {
+      this.name = '변경된 텍스트 데이터입니다.';
+    },
+  },
 };
 </script>
 
-<style scoped>
-.red {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-}
-.blue {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-}
-.black {
-  width: 100px;
-  height: 100px;
-  background-color: black;
-}
-</style>
+<style scoped></style>
